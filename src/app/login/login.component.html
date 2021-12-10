@@ -1,0 +1,23 @@
+<div id="container">
+  <div id="logo">
+    <img  src="/assets/Logo.png" width="170" height="55" class="imagemLogo">
+  </div>
+  <div id="container-formulario">
+    <form name="formularioLogin">
+          <legend>Login</legend>
+          <br>
+          <div class="inputBox">
+              <input type="text" name="nickname" id="nickname" class="inputLogin" required autocomplete="off" placeholder="Nickname">
+          </div>
+          <br> <br>
+          <div class="inputBox">
+              <input type="{{typePassword}}" name="password" id="pasword" class="inputLogin" required autocomplete="off" placeholder="Password">
+             <div class="olho" mat-icon matSuffix (click)="verSenha()"></div>
+          </div>
+          <br> <br>
+          <button id="submit" type="submit">Enter</button>
+          <br> <br>
+          <a id="botao-register" routerLink="/register-account">Register ></a>
+    </form>
+  </div>
+</div>

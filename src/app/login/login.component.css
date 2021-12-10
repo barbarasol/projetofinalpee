@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+#container{
+  height: 650px;
+  box-sizing: border-box;
+  margin: -8px;
+  background: url(/assets/Fundo.png) no-repeat ;
+  background-size: 1350px;
+}
+
+.imagemLogo{
+  position: absolute;
+  left:6%;
+  top: 5%;
+}
+
+#container-formulario{
+  position: relative;
+  width: 300px;
+  height: 400px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+form{
+  background-color: rgba(24, 27, 25, 1);
+  padding: 50px;
+  border-radius: 24px;
+  position: relative;
+  width: 340px;
+  height: 400px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 0px 9px 10px rgba(247, 248, 250, 0.33);
+}
+
+form legend{
+  text-align: center;
+  font-family: 'Roboto Condensed';
+  font-weight: 400;
+  font-size: 25px;
+  color: rgba(247, 248, 250, 1);
+  margin-bottom: 60px;
+}
+
+.inputLogin{
+  background: none;
+  border: 1px solid rgba(151, 151, 151, 1);
+  color: #F7F8FA;
+  border-radius: 8px;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 330px;
+  height: 40px;
+  padding: 5px;
+}
+
+.inputLogin::placeholder{
+  font-family: 'Inter';
+  font-weight: 400;
+  font-size: 14px;
+  color: #F7F8FA;
+  position: relative;
+  padding-left: 8px;
+}
+
+.inputLogin::content{
+  position: relative;
+  padding-left: 15px;
+}
+
+.olho{
+  position: relative;
+  left: 22%;
+}
+
+#submit{
+  background-color: rgba(237, 29, 36, 1);
+  position: relative;
+  left: 90px;
+  border: none;
+  border-radius: 4px;
+  text-align: center;
+  font-family: 'Roboto Condensed';
+  font-weight:400;
+  font-style: normal;
+  font-size: 25px;
+  color: #F7F8FA;
+  width: 165px;
+  height: 50px;
+}
+
+#botao-register{
+  text-decoration: none;
+  position: relative;
+  float: right;
+  top: 3px;
+  left: 12px;
+  font-family: 'Inter';
+  font-weight: 500;
+  font-size: 15px;
+  color: #F7F8FA;
+}
+
+.olho{
+  background: url(/assets/eye.png) no-repeat ;
+  width: 50px;
+  height: 50px;
+  border: none;
+  position: relative;
+  float: right;
+  left: 20px;
+  bottom: 60px;
+}
+
+
