@@ -1,1 +1,37 @@
-<p>register-payment works!</p>
+<div id="container">
+  <div id="logo">
+    <img src="/assets/Logo.png" width="170" height="55" class="imagemLogo">
+  </div>
+  <div id="container-formulario">
+    <form name="formularioLogin">
+      <legend>Register</legend>
+      <br>
+      <h2>Payment Data</h2>
+      <br> <br>
+      <div class="inputBox">
+        <input type="number" name="cardNumber" id="cardNumber" class="inputCadastro" required autocomplete="off" placeholder="Card Number">
+      </div>
+      <div class="inputBox2">
+        <div class="child">
+          <input type="number" name="validity" id="validity" class="inputCadastro2" required autocomplete="off" placeholder="Validity">
+        </div>
+        <div class="child">
+          <input type="number" name="cvv" id="cvv" class="inputCadastro2" required autocomplete="off" placeholder="CVV">
+        </div>
+      </div>
+      <br> <br>
+      <div class="inputBox">
+        <br>
+        <input type="text" name="cardholderName" id="cardholderName" class="inputCadastro" required autocomplete="off" placeholder="Cardholder Name">
+      </div>
+      <br> <br>
+      <div class="inputBox">
+        <input type="number" name="cpfHolder" id="cpfHolder" class="inputCadastro" required autocomplete="off" placeholder="CPF of the Holder">
+      </div>
+      <br> <br>
+      <button id="submit" type="submit" (click)="mudarRota()">Continue</button>
+      <br> <br>
+      <a id="botao-register" routerLink="/login">Login ></a>
+    </form>
+  </div>
+</div>
