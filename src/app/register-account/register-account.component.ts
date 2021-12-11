@@ -24,7 +24,7 @@ export class RegisterAccountComponent implements OnInit {
   }
 
   mudarRota(){
-    this.router.navigate(['/register-address'])
+    this.router.navigate(['/register-payment'])
   }
 
   ngOnInit(): void {
