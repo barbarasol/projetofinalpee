@@ -1,1 +1,41 @@
-<p>register-address works!</p>
+<div id="container">
+  <div id="logo">
+    <img src="/assets/Logo.png" width="170" height="55" class="imagemLogo">
+  </div>
+  <div id="container-formulario">
+    <form name="formularioLogin">
+      <legend>Register</legend>
+      <br>
+      <h2>Address Data</h2>
+      <br> <br>
+      <div class="inputBox">
+        <input type="number" name="cep" id="cep" class="inputCadastro" required autocomplete="off" placeholder="CEP">
+      </div>
+      <div class="inputBox2">
+        <div class="child">
+          <input type="text" name="address" id="address" class="inputCadastro3" required autocomplete="off" placeholder="Address">
+        </div>
+        <div class="child">
+          <input type="number" name="no" id="no" class="inputCadastro4" required autocomplete="off" placeholder="No.">
+        </div>
+      </div>
+      <br> <br>
+      <div class="inputBox">
+        <br>
+        <input type="text" name="complement" id="complemet" class="inputCadastro" required autocomplete="off" placeholder="Complement">
+      </div>
+      <div class="inputBox2">
+        <div class="child">
+          <input type="text" name="district" id="district" class="inputCadastro2" required autocomplete="off" placeholder="District">
+        </div>
+        <div class="child">
+          <input type="text" name="city" id="city" class="inputCadastro2" required autocomplete="off" placeholder="City">
+        </div>
+      </div>
+      <br> <br>
+      <button id="submit" type="submit" (click)="mudarRota()">Finish</button>
+      <br> <br>
+      <a id="botao-register" routerLink="/login">Login ></a>
+    </form>
+  </div>
+</div>

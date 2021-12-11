@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register-address',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterAddressComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
+
+  mudarRota(){
+    this.router.navigate(['/login'])
+  }
 
   ngOnInit(): void {
   }
