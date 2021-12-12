@@ -118,4 +118,13 @@ form legend{
   bottom: 60px;
 }
 
+.ng-invalid.ng-touched:not(form){
+  border: 3px solid red
+}
+
+.invalido{
+  color: red;
+  position: relative;
+  bottom: 12px;
+}
 

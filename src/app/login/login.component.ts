@@ -10,6 +10,10 @@ export class LoginComponent implements OnInit {
   typePassword = 'password';
   password = 'visibility';
 
+  onSubmit(form: any){
+    console.log(form.value)
+  }
+
   constructor() { }
 
   verSenha(){
@@ -22,7 +26,8 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  
+  public Padraonickname = { N: { pattern: new RegExp(`[A-Za-z_.-]`) } };
+
   ngOnInit(): void {
   }
 

@@ -3,21 +3,28 @@
     <img  src="/assets/Logo.png" width="170" height="55" class="imagemLogo">
   </div>
   <div id="container-formulario">
-    <form name="formularioLogin">
-          <legend>Login</legend>
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+      <legend>Login</legend>
           <br>
           <div class="inputBox">
-              <input type="text" name="nickname" id="nickname" class="inputLogin" required autocomplete="off" placeholder="Nickname">
+              <input type="text" name="nickname" id="nickname" class="inputLogin" required autocomplete="off" placeholder="Nickname"   mask="N*" [specialCharacters]="[]" [patterns]="Padraonickname" ngModel #nickname="ngModel">
+              <div *ngIf="!nickname.valid && nickname.touched" class="invalido">
+                Nickname é obrigatório
+              </div>
           </div>
           <br> <br>
           <div class="inputBox">
-              <input type="{{typePassword}}" name="password" id="pasword" class="inputLogin" required autocomplete="off" placeholder="Password">
+              <input type="{{typePassword}}" name="password" id="pasword" class="inputLogin" required autocomplete="off" placeholder="Password" ngModel #password="ngModel">
+              <div *ngIf="!password.valid && password.touched" class="invalido">
+                Senha é obrigatório
+              </div>
              <div class="olho" mat-icon matSuffix (click)="verSenha()"></div>
           </div>
           <br> <br>
-          <button id="submit" type="submit">Enter</button>
+          <button id="submit" type="submit" [disabled]="!f.valid">Enter</button>
           <br> <br>
           <a id="botao-register" routerLink="/register-account">Register ></a>
     </form>
   </div>
 </div>
+
