@@ -3,37 +3,55 @@
     <img src="/assets/Logo.png" width="170" height="55" class="imagemLogo">
   </div>
   <div id="container-formulario">
-    <form name="formularioLogin">
+    <form #formAcc="ngForm" (ngSubmit)="onSubmit(formAcc)">
       <legend>Register</legend>
       <br>
       <h2>Account Data</h2>
       <br> <br>
       <div class="inputBox">
-          <input type="text" name="nickname" id="nickname" class="inputCadastro" required autocomplete="off" placeholder="Nickname">
+          <input type="text" name="nickname" id="nickname" class="inputCadastro" required autocomplete="off" placeholder="Nickname" mask="N*" [specialCharacters]="[]" [patterns]="Padraonickname" ngModel #nickname="ngModel">
+          <div *ngIf="!nickname.valid && nickname.touched" class="invalido">
+            Nickname é obrigatório
+          </div>
       </div>
       <br> <br>
       <div class="inputBox">
-        <input type="text" name="firstName" id="firstName" class="inputCadastro" required autocomplete="off" placeholder="First Name">
+        <input type="text" name="firstName" id="firstName" class="inputCadastro" required autocomplete="off" placeholder="First Name" mask="N*" [patterns]="Padraoname" ngModel #firstName="ngModel">
+        <div *ngIf="!firstName.valid && firstName.touched" class="invalido">
+          First Name é obrigatório
+        </div>
       </div>
       <br> <br>
       <div class="inputBox">
-        <input type="text" name="lastName" id="lastName" class="inputCadastro" required autocomplete="off" placeholder="Last Name">
+        <input type="text" name="lastName" id="lastName" class="inputCadastro" required autocomplete="off" placeholder="Last Name" mask="N*" [patterns]="Padraoname" ngModel #lastName="ngModel">
+        <div *ngIf="!lastName.valid && lastName.touched" class="invalido">
+          Last Name é obrigatório
+        </div>
       </div>
       <br> <br>
       <div class="inputBox">
-        <input type="email" name="email" id="email" class="inputCadastro" required autocomplete="off" placeholder="E-Mail">
+        <input type="email" name="email" id="email" class="inputCadastro" required autocomplete="off" placeholder="E-Mail" email ngModel #email="ngModel">
+        <div *ngIf="!email.valid && email.touched" class="invalido">
+          E-Mail é obrigatório
+        </div>
       </div>
       <br> <br>
       <div class="inputBox">
-        <input type="number" name="contact" id="contact" class="inputCadastro" required autocomplete="off" placeholder="Contact">
+        <input type="tel" name="contact" id="contact" class="inputCadastro" required autocomplete="off" mask="(00) 00000-0000" placeholder="Contact" ngModel #contact="ngModel">
+        <div *ngIf="!contact.valid && contact.touched" class="invalido">
+          Contact é obrigatório
+        </div>
       </div>
       <br> <br>
       <div class="inputBox">
-        <input type="{{typePassword}}" name="password" id="pasword" class="inputCadastro" required autocomplete="off" placeholder="Password">
+        <input type="{{typePassword}}" name="password" id="pasword" class="inputCadastro" required autocomplete="off" placeholder="Password" ngModel #password="ngModel">
        <div class="olho" mat-icon matSuffix (click)="verSenha()"></div>
+       <div *ngIf="!password.valid && password.touched" class="invalido">
+        Senha é obrigatório
+      </div>
       </div>
       <br> <br>
-      <button id="submit" type="submit" (click)="mudarRota()">Continue</button>
+      <button id="submit" type="submit" (click)="mudarRota()" [disabled]="!formAcc.valid">Continue</button>
       <br> <br>
       <a id="botao-register" routerLink="/login">Login ></a>
     </form>

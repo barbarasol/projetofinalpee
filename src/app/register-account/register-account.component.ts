@@ -23,9 +23,18 @@ export class RegisterAccountComponent implements OnInit {
     }
   }
 
+  onSubmit(formAcc: any){
+    console.log(formAcc)
+    this.router.navigate(['/register-payment'])
+  }
+
   mudarRota(){
     this.router.navigate(['/register-payment'])
   }
+
+  public Padraonickname = { N: { pattern: new RegExp(`[A-Za-z_.-]`) } };
+
+  public Padraoname = { N: { pattern: new RegExp(`[A-Za-z]`) } };
 
   ngOnInit(): void {
   }
