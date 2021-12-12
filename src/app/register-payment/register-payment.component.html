@@ -3,33 +3,51 @@
     <img src="/assets/Logo.png" width="170" height="55" class="imagemLogo">
   </div>
   <div id="container-formulario">
-    <form name="formularioLogin">
+    <form #formPay="ngForm" (ngSubmit)="onSubmit(formPay)">
       <legend>Register</legend>
       <br>
       <h2>Payment Data</h2>
       <br> <br>
       <div class="inputBox">
-        <input type="number" name="cardNumber" id="cardNumber" class="inputCadastro" required autocomplete="off" placeholder="Card Number">
+        <input type="text" name="cardNumber" id="cardNumber" class="inputCadastro" required autocomplete="off" placeholder="Card Number" mask="0000 0000 0000 0000" ngModel #cardNumber="ngModel">
+        <div *ngIf="!cardNumber.valid && cardNumber.touched" class="invalido">
+          Card Number é obrigatório
+        </div>
       </div>
       <div class="inputBox2">
         <div class="child">
-          <input type="number" name="validity" id="validity" class="inputCadastro2" required autocomplete="off" placeholder="Validity">
+          <input type="text" name="validity" id="validity" class="inputCadastro2" required autocomplete="off" mask="00/00" placeholder="Validity" ngModel #validity="ngModel">
+          <div *ngIf="!validity.valid && validity.touched" class="invalido2">
+            Validity é obrigatório
+          </div>
+          <div *ngIf="validity.value.parseInt<=12/21" class="invalido2">
+            Validity é obrigatório
+          </div>
         </div>
         <div class="child">
-          <input type="number" name="cvv" id="cvv" class="inputCadastro2" required autocomplete="off" placeholder="CVV">
+          <input type="number" name="cvv" id="cvv" class="inputCadastro2" required autocomplete="off" mask="000" placeholder="CVV" ngModel #cvv="ngModel">
+          <div *ngIf="!cvv.valid && cvv.touched" class="invalido2">
+            CVV é obrigatório
+          </div>
         </div>
       </div>
       <br> <br>
       <div class="inputBox">
         <br>
-        <input type="text" name="cardholderName" id="cardholderName" class="inputCadastro" required autocomplete="off" placeholder="Cardholder Name">
+        <input type="text" name="cardholderName" id="cardholderName" class="inputCadastro" required autocomplete="off" placeholder="Cardholder Name" mask="N*" [patterns]="PadraoCardHolder" ngModel #cardHolder="ngModel">
+        <div *ngIf="!cardHolder.valid && cardHolder.touched" class="invalido">
+          Cardholder Name é obrigatório
+        </div>
       </div>
       <br> <br>
       <div class="inputBox">
-        <input type="number" name="cpfHolder" id="cpfHolder" class="inputCadastro" required autocomplete="off" placeholder="CPF of the Holder">
+        <input type="text" name="cpfHolder" id="cpfHolder" class="inputCadastro" required autocomplete="off" mask="000.000.000-00"  placeholder="CPF of the Holder" ngModel #cpf="ngModel">
+        <div *ngIf="!cpf.valid && cpf.touched" class="invalido">
+          CPF é obrigatório
+        </div>
       </div>
       <br> <br>
-      <button id="submit" type="submit" (click)="mudarRota()">Continue</button>
+      <button id="submit" type="submit" (click)="mudarRota()" [disabled]="!formPay.valid">Continue</button>
       <br> <br>
       <a id="botao-register" routerLink="/login">Login ></a>
     </form>

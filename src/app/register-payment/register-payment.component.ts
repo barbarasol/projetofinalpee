@@ -14,6 +14,12 @@ export class RegisterPaymentComponent implements OnInit {
     this.router.navigate(['/register-address'])
   }
 
+  onSubmit(formPay: any){
+    console.log(formPay)
+  }
+
+  public PadraoCardHolder = { N: { pattern: new RegExp(`[A-Za-z ]`) } };
+
   ngOnInit(): void {
   }
 
