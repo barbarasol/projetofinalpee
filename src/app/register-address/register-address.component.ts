@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { AstMemoryEfficientTransformer } from '@angular/compiler';
 
 @Component({
   selector: 'app-register-address',
@@ -8,11 +10,29 @@ import { Router } from '@angular/router';
 })
 export class RegisterAddressComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  onSubmit(formAddress: any){
+    console.log(formAddress.value)
+  }
+
+  constructor(private router: Router, private http: HttpClient) { }
 
   mudarRota(){
     this.router.navigate(['/login'])
   }
+
+  consultaCEP(cep: string, form: any){
+    cep = cep.replace("-","");
+    this.http.get(`https://viacep.com.br/ws/${cep}/json`).subscribe(dados => this.populaDadosForm(dados, form));
+  }
+
+  populaDadosForm(dados: any, formulario: any){
+    formulario.form.patchValue({
+      address: dados.logradouro,
+      cep: dados.cep,
+      district: dados.localidade,
+      city: dados.uf
+    });
+ }
 
   ngOnInit(): void {
   }

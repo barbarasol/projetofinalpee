@@ -3,37 +3,55 @@
     <img src="/assets/Logo.png" width="170" height="55" class="imagemLogo">
   </div>
   <div id="container-formulario">
-    <form name="formularioLogin">
+    <form #formAddress="ngForm" (ngSubmit)="onSubmit(formAddress)">
       <legend>Register</legend>
       <br>
       <h2>Address Data</h2>
       <br> <br>
       <div class="inputBox">
-        <input type="number" name="cep" id="cep" class="inputCadastro" required autocomplete="off" placeholder="CEP">
+        <input type="text" name="cep" id="cep" class="inputCadastro" required autocomplete="off" placeholder="CEP" mask="00000-000" ngModel #cep="ngModel" (blur)="consultaCEP(cep.value, formAddress)">
+        <div *ngIf="!cep.valid && cep.touched" class="invalido">
+          CEP é obrigatório
+        </div>
       </div>
       <div class="inputBox2">
         <div class="child">
-          <input type="text" name="address" id="address" class="inputCadastro3" required autocomplete="off" placeholder="Address">
+          <input type="text" name="address" id="address" class="inputCadastro3" required autocomplete="off" placeholder="Address" ngModel #address="ngModel">
+          <div *ngIf="!address.valid && address.touched" class="invalido2">
+            Address é obrigatório
+          </div>
         </div>
         <div class="child">
-          <input type="number" name="no" id="no" class="inputCadastro4" required autocomplete="off" placeholder="No.">
+          <input type="number" name="no" id="no" class="inputCadastro4" required autocomplete="off" placeholder="No." ngModel #no="ngModel">
+          <div *ngIf="!no.valid && no.touched" class="invalido2">
+            Obrigatório
+          </div>
         </div>
       </div>
       <br> <br>
       <div class="inputBox">
         <br>
-        <input type="text" name="complement" id="complemet" class="inputCadastro" required autocomplete="off" placeholder="Complement">
+        <input type="text" name="complement" id="complemet" class="inputCadastro" required autocomplete="off" placeholder="Complement" ngModel #complement="ngModel">
+        <div *ngIf="!complement.valid && complement.touched" class="invalido">
+          Complement é obrigatório
+        </div>
       </div>
       <div class="inputBox2">
         <div class="child">
-          <input type="text" name="district" id="district" class="inputCadastro2" required autocomplete="off" placeholder="District">
+          <input type="text" name="district" id="district" class="inputCadastro2" required autocomplete="off" placeholder="District" ngModel #district="ngModel">
+          <div *ngIf="!district.valid && district.touched" class="invalido2">
+            District é obrigatório
+          </div>
         </div>
         <div class="child">
-          <input type="text" name="city" id="city" class="inputCadastro2" required autocomplete="off" placeholder="City">
+          <input type="text" name="city" id="city" class="inputCadastro2" required autocomplete="off" placeholder="City" ngModel #city="ngModel">
+          <div *ngIf="!city.valid && city.touched" class="invalido2">
+            City é obrigatório
+          </div>
         </div>
       </div>
       <br> <br>
-      <button id="submit" type="submit" (click)="mudarRota()">Finish</button>
+      <button id="submit" type="submit" (click)="mudarRota()" [disabled]="!formAddress.valid">Finish</button>
       <br> <br>
       <a id="botao-register" routerLink="/login">Login ></a>
     </form>
