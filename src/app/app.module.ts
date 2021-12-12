@@ -7,7 +7,11 @@ import { RegisterAccountComponent } from './register-account/register-account.co
 import { RegisterPaymentComponent } from './register-payment/register-payment.component';
 import { RegisterAddressComponent } from './register-address/register-address.component';
 import { RouterModule } from '@angular/router';
-import { ROUTES } from  './app.routes'
+import { ROUTES } from  './app.routes';
+
+import { NgxMaskModule } from 'ngx-mask';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,7 +23,12 @@ import { ROUTES } from  './app.routes'
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(ROUTES)
+    FormsModule,
+    RouterModule.forRoot(ROUTES),
+    NgxMaskModule.forRoot({
+      dropSpecialCharacters: false
+    }),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
