@@ -161,3 +161,7 @@ h2{
   top: 12px;
   left: 6px;
 }
+
+button:hover{
+  cursor: pointer;
+}

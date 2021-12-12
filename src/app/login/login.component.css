@@ -128,3 +128,6 @@ form legend{
   bottom: 12px;
 }
 
+button:hover{
+  cursor: pointer;
+}
