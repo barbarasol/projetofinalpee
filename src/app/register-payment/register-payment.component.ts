@@ -10,12 +10,9 @@ export class RegisterPaymentComponent implements OnInit {
 
   constructor(private router: Router) { }
 
-  mudarRota(){
-    this.router.navigate(['/register-address'])
-  }
-
   onSubmit(formPay: any){
-    console.log(formPay)
+    console.log(formPay.value);
+    this.router.navigate(['/register-address'])
   }
 
   public PadraoCardHolder = { N: { pattern: new RegExp(`[A-Za-z ]`) } };

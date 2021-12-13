@@ -20,12 +20,9 @@
           <div *ngIf="!validity.valid && validity.touched" class="invalido2">
             Validity é obrigatório
           </div>
-          <div *ngIf="validity.value.parseInt<=12/21" class="invalido2">
-            Validity é obrigatório
-          </div>
         </div>
         <div class="child">
-          <input type="number" name="cvv" id="cvv" class="inputCadastro2" required autocomplete="off" mask="000" placeholder="CVV" ngModel #cvv="ngModel">
+          <input type="text" name="cvv" id="cvv" class="inputCadastro2" required autocomplete="off" mask="000" placeholder="CVV"      ngModel #cvv="ngModel">
           <div *ngIf="!cvv.valid && cvv.touched" class="invalido2">
             CVV é obrigatório
           </div>
@@ -47,7 +44,7 @@
         </div>
       </div>
       <br> <br>
-      <button id="submit" type="submit" (click)="mudarRota()" [disabled]="!formPay.valid">Continue</button>
+      <button id="submit" type="submit" [disabled]="!formPay.valid">Continue</button>
       <br> <br>
       <a id="botao-register" routerLink="/login">Login ></a>
     </form>

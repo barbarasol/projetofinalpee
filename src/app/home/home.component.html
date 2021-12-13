@@ -1,0 +1,8 @@
+<app-header></app-header>
+<br><br>
+<button (click)="clickAPIMarvel()">Chama API MARVEL</button>
+
+<div *ngFor="let quadrinho of quadrinhosMarvel">
+  <h3>{{quadrinho.title}}</h3>
+  <br>
+</div>

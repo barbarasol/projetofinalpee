@@ -37,7 +37,7 @@
       </div>
       <br> <br>
       <div class="inputBox">
-        <input type="tel" name="contact" id="contact" class="inputCadastro" required autocomplete="off" mask="(00) 00000-0000" placeholder="Contact" ngModel #contact="ngModel">
+        <input type="text" name="contact" id="contact" class="inputCadastro" required autocomplete="off" mask="(00) 00000-0000" placeholder="Contact" ngModel #contact="ngModel">
         <div *ngIf="!contact.valid && contact.touched" class="invalido">
           Contact é obrigatório
         </div>
@@ -51,7 +51,7 @@
       </div>
       </div>
       <br> <br>
-      <button id="submit" type="submit" (click)="mudarRota()" [disabled]="!formAcc.valid">Continue</button>
+      <button id="submit" type="submit" [disabled]="!formAcc.valid">Continue</button>
       <br> <br>
       <a id="botao-register" routerLink="/login">Login ></a>
     </form>

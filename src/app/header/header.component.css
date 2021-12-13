@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+#container{
+  background-color: #272827;
+  height: 100px;
+  box-sizing: border-box;
+  margin: -8px;
+  margin-top:-16px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#esquerda{
+  display: flex;
+  position: relative;
+  left: 50px;
+}
+
+a{
+  font-family: 'Roboto Condensed';
+  font-weight: 400;
+  font-size: 20px;
+  color: #FFFFFF;
+  text-decoration: none;
+  position: relative;
+  top: 40px;
+  padding-right: 40px;
+}
+
+ #imagemMarvel{
+   position: relative;
+   float: right;
+   right: 50px;
+   top: 32px;
+ }
+

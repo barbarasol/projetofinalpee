@@ -12,6 +12,8 @@ import { ROUTES } from  './app.routes';
 import { NgxMaskModule } from 'ngx-mask';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     RegisterAccountComponent,
     RegisterPaymentComponent,
-    RegisterAddressComponent
+    RegisterAddressComponent,
+    HomeComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

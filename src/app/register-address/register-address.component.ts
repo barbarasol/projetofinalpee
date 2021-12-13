@@ -10,15 +10,7 @@ import { AstMemoryEfficientTransformer } from '@angular/compiler';
 })
 export class RegisterAddressComponent implements OnInit {
 
-  onSubmit(formAddress: any){
-    console.log(formAddress.value)
-  }
-
   constructor(private router: Router, private http: HttpClient) { }
-
-  mudarRota(){
-    this.router.navigate(['/login'])
-  }
 
   consultaCEP(cep: string, form: any){
     cep = cep.replace("-","");
@@ -32,6 +24,11 @@ export class RegisterAddressComponent implements OnInit {
       district: dados.localidade,
       city: dados.uf
     });
+  }
+
+ onSubmit(formAddress: any){
+  console.log(formAddress.value);
+  this.router.navigate(['/login'])
  }
 
   ngOnInit(): void {
